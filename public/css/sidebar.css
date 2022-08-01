@@ -1,0 +1,22 @@
+.text-center {
+    color:white;
+}
+
+.nav-item img {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    padding-top:10px;
+}
+
+.nav-item p {
+    margin:0;
+}
+
+.nav-item a{
+    color: white !important;
+}
+
+.nav-item a:hover{
+    background-color: rgb(53, 53, 53) !important;
+}

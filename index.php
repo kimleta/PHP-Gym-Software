@@ -1,7 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include "head.php" ?>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="icon" href="public/img/Alogo.png" type="image/icon type">
+    <script src="public/js/functions.js"></script>
+
+  <title>AlphaTrack - Membership Software </title>
   </head>
   <body class="bg-light vh-100">
         <div class = "row vh-100">
@@ -21,7 +30,7 @@
         </div>
             <div id="myModal" class="modal">
             <div class="modal-content">
-              <a class="close" href="#">&times;</a>
+              <a style = "color:black;" class="close" href="#">&times;</a>
               <?php include "loginForm.php" ?>
             </div>
 
