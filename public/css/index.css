@@ -1,0 +1,259 @@
+.landingPage{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    overflow:hidden;
+}
+.landingPage video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index:0;
+}
+
+.text
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  margin:0 auto;
+  padding: 1vh;
+  
+}
+
+.text h3
+{
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+  display:inline-block;
+}
+.text p
+{
+  font-size: 1.1em;
+  margin: 20px 0;
+  font-weight: 400;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  background-color:#fff;
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px #fff;
+}
+.text a:hover
+{
+  letter-spacing: 6px;
+  background-color: greenyellow;
+  -webkit-box-shadow: 0 0 10px greenyellow;
+  box-shadow: 0 0 10px greenyellow;
+}
+
+.landingLogo {
+    text-align:center;
+    width:20vh;
+    position: relative;
+    margin-top: 2vh;
+    z-index: 1000 ;
+
+}
+
+body {
+    overflow-x: hidden
+}
+
+.work-box {
+    border: 1px solid;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    text-align: center;
+    margin: 1vh;
+}
+
+.section_padding_130 {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+.faq_area {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-accordian .card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #999999;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+    .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
+}
+
+
+
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+
+  .modal:target {
+    display:block;
+  }
+  
+  
+  /* Modal Content */
+  .modal-content {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    left: 20% ;
+    right: 20%;
+    background-color: #f8f9fa;
+    width: auto;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+  }
+  .modal-content form {
+    padding: 20px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
