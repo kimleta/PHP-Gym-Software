@@ -1,22 +1,29 @@
-
-  <div class="d-flex flex-column bg-dark" style="width:8%;height:100vw;">
-    <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
-    <img style="display: block; margin-left: auto; margin-right: auto;" height = "50" src="public/img/Alogo.png">
-    </a>
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-      <li class="nav-item">
-        <a href="#" class="nav-link active  rounded-0" aria-current="page" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
-            <img src="public/img/dashboard.svg"><p>Dashboard</p>
-        </a>
-        <a href="#" class="nav-link  rounded-0" aria-current="page" title="Members" data-bs-toggle="tooltip" data-bs-placement="right">
-            <img src="public/img/user.svg"><p>Members</p>
-        </a>
-        <a href="#" class="nav-link  rounded-0" aria-current="page" title="Log Off" data-bs-toggle="tooltip" data-bs-placement="right">
-            <img src="public/img/exit.svg"><p>Log Off</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-      <script src="public/js/sidebars.js"></script>
-</html>
+<div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Tools</div>
+                            <a class="nav-link" href="dashboard.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <a class="nav-link" href="members.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Members
+                            </a>
+                            <a class="nav-link" href="sessions.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar"></i></div>
+                                Private Sessions
+                            </a>
+                            <a class="nav-link" href="dashboard.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                                Log Off
+                            </a>
+                    </div>
+                    <div class="sb-sidenav-footer sidebar-bottom">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
