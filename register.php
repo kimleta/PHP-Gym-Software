@@ -102,15 +102,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        .container {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            }
+        .landingLogo {
+            text-align:center;
+            width:20vh;
+            position: relative;
+            margin-top: 2vh;
+            z-index: 1000 ;
+            }
     </style>
 </head>
-<body>
-    <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<body class="bg-light">
+    <div class="container shadow-lg">
+    <h2 style="text-align:center">Sign Up</h2>
+        <form style ="text-align:center;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <img class = "landingLogo" style ="text-align:center;" src="public/img/AlogoBlack.png">
+                <br><br>
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
