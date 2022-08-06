@@ -16,14 +16,14 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar"></i></div>
                                 Private Sessions
                             </a>
-                            <a class="nav-link" href="dashboard.php">
+                            <a class="nav-link" href="logout.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
                                 Log Off
                             </a>
                     </div>
                     <div class="sb-sidenav-footer sidebar-bottom">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?php echo $_SESSION["username"]; ?>
                     </div>
                 </nav>
             </div>

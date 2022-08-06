@@ -31,7 +31,7 @@
             <div id="myModal" class="modal">
             <div class="modal-content">
               <a style = "color:black;" class="close" href="#">&times;</a>
-              <?php include "loginForm.php" ?>
+              <?php include "elements/loginForm.php" ?>
             </div>
 
           </div> 

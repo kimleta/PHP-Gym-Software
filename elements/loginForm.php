@@ -34,6 +34,6 @@
 
   <!-- Register buttons -->
   <div class="text-center">
-    <p>Not a member? <a href="#!">Register</a></p>
+    <p>Not a member? <a href="./config/register.php">Register</a></p>
  </div>
 </form>

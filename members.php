@@ -31,7 +31,7 @@
                 </li>
             </ul>
         </nav>
-        <?php include "sidebar.php" ; ?>
+        <?php include "elements/sidebar.php" ; ?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
