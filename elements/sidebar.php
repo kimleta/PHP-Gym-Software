@@ -10,11 +10,7 @@
                             </a>
                             <a class="nav-link" href="members.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
-                                Members
-                            </a>
-                            <a class="nav-link" href="sessions.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar"></i></div>
-                                Private Sessions
+                                Add new Member
                             </a>
                             <a class="nav-link" href="logout.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>

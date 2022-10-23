@@ -23,17 +23,11 @@
                         <p><b>AlphaTrack</b> Membership managment software is for all types of ventures 
                             who need membership tracking</p>
                         <br>
-                        <a href="#myModal">Sign In/Sign Up</a><br><br>
+                        <a href="login.php">Sign In/Sign Up</a><br><br>
                     </div>
                 </div>    
             </div>
         </div>
-            <div id="myModal" class="modal">
-            <div class="modal-content">
-              <a style = "color:black;" class="close" href="#">&times;</a>
-              <?php include "elements/loginForm.php" ?>
-            </div>
-
           </div> 
         <br><br>
         <section  class="portfolio-mf sect-pt4 route">
@@ -304,7 +298,7 @@
                         <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                             <i class="lni-emoji-sad"></i>
                             <p class="mb-0 px-2">Can't find your answers?</p>
-                            <a href="#"> Contact us</a>
+                            <a href="mailto:contact@alphatrack.com"> Contact us</a>
                         </div>
                         <br>
                     </div>
