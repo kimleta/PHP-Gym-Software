@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 04, 2022 at 06:26 PM
+-- Generation Time: Dec 25, 2022 at 08:34 PM
 -- Server version: 5.7.36
 -- PHP Version: 8.0.13
 
@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `plan` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`username`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
@@ -40,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
 -- Dumping data for table `admin_user`
 --
 
-INSERT INTO `admin_user` (`ID`, `username`, `password`) VALUES
-(1, 'admin', 'admin123');
+INSERT INTO `admin_user` (`ID`, `username`, `password`, `plan`) VALUES
+(1, 'admin', 'admin123', 'Pro');
 
 -- --------------------------------------------------------
 
