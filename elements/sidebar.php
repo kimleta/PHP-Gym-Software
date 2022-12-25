@@ -1,3 +1,4 @@
+
 <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -20,6 +21,10 @@
                     <div class="sb-sidenav-footer sidebar-bottom">
                         <div class="small">Logged in as:</div>
                         <?php echo $_SESSION["username"]; ?>
+                        <div class="small">Active Plan :</div>
+                        <?php echo $_SESSION['plan']; if($_SESSION['plan'] === 'Free'): ?>
+                            <a href="./">Upgrade</a>
+                        <?php endif ; ?>
                     </div>
                 </nav>
             </div>

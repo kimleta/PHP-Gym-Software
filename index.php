@@ -71,7 +71,7 @@
                                 </svg>
                             </h2>
                             <div class="w-more">
-                              <span class="w-ctegory">Free-trial up to 10 clients</span>
+                              <span class="w-ctegory">Free up to 100 clients</span>
                             </div>
                           </div>
                         </div>
@@ -156,18 +156,19 @@
         <section id="prices">
           <div class="container-fluid" >
             <div class="container p-5">
+            <h3 class="text-center">Our offers :</h3><br>
               <div class="row">
-                <div class="col-lg-4 col-md-12 mb-4">
+                <div class="col-lg-6 col-md-12 mb-6">
                   <div class="card h-100 shadow-lg">
                     <div class="card-body">
                       <div class="text-center p-3">
-                        <h5 class="card-title">Basic</h5>
-                        <small>Small Bussines</small>
+                        <h5 class="card-title">Free Plan</h5>
+                        <small>For small bussines</small>
                         <br><br>
-                        <span class="h2">$15</span>/month
+                        <span class="h2">$0</span>/month
                         <br><br>
                       </div>
-                      <p class="card-text" style="text-align:center;">up to 600 clients</p>
+                      <p class="card-text" style="text-align:center;">up to 100 clients</p>
                     </div>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
@@ -178,62 +179,35 @@
                       </svg> Download list of clients any time</li>
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Buy more space if needed for 1$ per 100 clients</li>
+                      </svg>Get 20% off when upgrading to PRO</li>
                     </ul>
                     <div class="card-body text-center">
                       <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-12 mb-4">
+              
+                <div class="col-lg-6 col-md-12 mb-6">
                   <div class="card h-100 shadow-lg">
                     <div class="card-body">
                       <div class="text-center p-3">
-                        <h5 class="card-title">Standard</h5>
-                        <small>Medium Bussines</small>
-                        <br><br>
-                        <span class="h2">$35</span>/month 
-                        <br><br>
-                      </div>
-                      <p class="card-text" style="text-align:center;">up to 3000 clients</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Best suitable for multipe-location business</li>
-                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Download list of clients any time</li>
-                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Buy more space if needed for 1$ per 100 clients</li>
-                    </ul>
-                    <div class="card-body text-center">
-                      <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-12 mb-4">
-                  <div class="card h-100 shadow-lg">
-                    <div class="card-body">
-                      <div class="text-center p-3">
-                        <h5 class="card-title">Premium</h5>
+                        <h5 class="card-title">Pro Plan</h5>
                         <small>Large Companies</small>
                         <br><br>
-                        <span class="h2">$50</span>/month 
+                        <span class="h2">$30</span>/month 
                       </div><br>
-                      <p class="card-text" style="text-align:center;">up to 10000 clients</p>
+                      <p class="card-text" style="text-align:center;">Unlimited clients</p>
                     </div>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Best suitable for regional/state chains of business</li>
+                      </svg> Best suitable for large bussiness with multipe locations</li>
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                       </svg> Download list of clients any time</li>
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Buy more space if needed for <b>1$ per 200 clients</b></li>
+                      </svg> Additional features in comparison with the Free Plan</li>
                     </ul>
                     <div class="card-body text-center">
                       <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
@@ -250,54 +224,18 @@
                     <div class="col-12 col-sm-8 col-lg-6">
                         <!-- Section Heading-->
                         <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <h3><span>Frequently </span> Asked Questions</h3>
-                            <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
+                            <h3><span>Alpha Track</h3>
+                            <p>Aplha Track is completely creative, lightweight, clean &amp; super responsive app for tracking your members.</p>
                             <div class="line"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <!-- FAQ Area-->
-                    <div class="col-12 col-sm-10 col-lg-8 ">
-                        <div class="accordion faq-accordian" id="faqAccordion">
-                            <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                <div class="card-header" id="headingOne">
-                                    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What If i add more clients than specified in my plan ?<span class="lni-chevron-up"></span></h6>
-                                </div>
-                                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
-                                    <div class="card-body">
-                                        <p>If you add more clients than its specified, we will automaticly add more slots and we will bill you next month</p>
-                                        <br>
-                                        <p>If you remove some inactive clients from database, you can request lowering number of slots down to plan limit</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                                <div class="card-header" id="headingTwo">
-                                    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">What if I don't have constant internet connection<span class="lni-chevron-up"></span></h6>
-                                </div>
-                                <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
-                                    <div class="card-body">
-                                        <p>No problem ! We have offline application which will perfectly work on all sort of PC/Laptops</p>
-                                        <br><p>Acording to your subscription, we will send you every month another serial key which you will need to apply into program (PC only). Using this offline method , you cannot access your database throught mobile devices </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                                <div class="card-header" id="headingThree">
-                                    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Contact form isn't working?<span class="lni-chevron-up"></span></h6>
-                                </div>
-                                <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
-                                    <div class="card-body">
-                                        <p>Call us on number or send us email directly</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- Support Button-->
                         <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                             <i class="lni-emoji-sad"></i>
-                            <p class="mb-0 px-2">Can't find your answers?</p>
+                            <p class="mb-0 px-2">Do you have more questions ?</p>
                             <a href="mailto:contact@alphatrack.com"> Contact us</a>
                         </div>
                         <br>
@@ -312,4 +250,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+  <footer class="bg-dark text-center text-light text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-light" href="https://alphatrack.com/">alphatrack.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 </html>

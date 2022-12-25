@@ -20,7 +20,8 @@ error_reporting(0);
         if($count == 1){  
             session_start();
             $_SESSION["loggedin"] = true;
-            $_SESSION["username"] = $username;      
+            $_SESSION["username"] = $username;  
+            $_SESSION['plan'] = $row['plan']; 
             header("location: ./dashboard.php");  
         }  
         else{  
