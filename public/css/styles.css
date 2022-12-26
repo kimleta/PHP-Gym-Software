@@ -11507,6 +11507,8 @@ body {
 }
 .sb-sidenav-dark .sb-sidenav-footer {
   background-color: #343a40;
+  color:white;
+  margin-top:1vw;
 }
 
 .sb-sidenav-light {
@@ -11701,7 +11703,6 @@ body {
 }
 
 .sidebar-bottom {
-  position: fixed;
   bottom: 0;
   width: 100%;
 }

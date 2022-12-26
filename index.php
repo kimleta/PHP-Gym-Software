@@ -182,7 +182,6 @@
                       </svg>Get 20% off when upgrading to PRO</li>
                     </ul>
                     <div class="card-body text-center">
-                      <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
                     </div>
                   </div>
                 </div>
@@ -210,7 +209,6 @@
                       </svg> Additional features in comparison with the Free Plan</li>
                     </ul>
                     <div class="card-body text-center">
-                      <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</button>
                     </div>
                   </div>
                 </div>

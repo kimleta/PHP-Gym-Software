@@ -28,29 +28,21 @@ include "config/loginLogic.php";
 <body class="bg-light">
     <div class="container shadow-lg">
         <h2 style="text-align:center">Login</h2>
-
-        <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
-
-        <form style ="text-align:center;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form style ="text-align:center;" method="post">
                 <img class = "landingLogo" style ="text-align:center;" src="public/img/AlogoBlack.png">
                 <br><br>
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
             </div>    
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                <input type="password" name="password" class="form-control">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
+            <a href="reset-password.php"><input class="btn btn-primary" value="Forgot Password ?"></a><br><br>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p> 
             <p><a href="index.php">Go back to homepage</a>.</p>
         </form>
