@@ -17,8 +17,11 @@ error_reporting(0);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
           
+
+
         if($count == 1){  
             session_start();
+            $_SESSION["adminID"] = $row["ID"];
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $username;  
             $_SESSION['plan'] = $row['plan']; 

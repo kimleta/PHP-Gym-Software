@@ -27,7 +27,7 @@
                                     Search for member info
                                 </a>
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Location Section</div>
-                                <a class="nav-link" href="members.php">
+                                <a class="nav-link" href="location.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-building"></i></div>
                                     Add new location
                                 </a>
@@ -45,7 +45,7 @@
                                     Schedule session
                                 </a>
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Package Section</div>
-                                <a class="nav-link" href="members.php">
+                                <a class="nav-link" href="packages.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-cube"></i></div>
                                     Add/Edit Packages
                                 </a>
