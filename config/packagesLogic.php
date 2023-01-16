@@ -2,26 +2,49 @@
 
 error_reporting(0);
 
-
-
 include('databaseConnection.php');  
-if($_GET['button'] == "delete") {
+
+$adminID = $_SESSION["adminID"];
+
+//Array of all locations for this user
+
+$sqlLocations = "select * from `location` where `Admin ID` = '$adminID'";
+$result = mysqli_query($con, $sqlLocations);
+$resultArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+/// Sort them by id(key) and name(value)
+
+$sortedArray = [] ;
+
+foreach($resultArray as $value) {
+    $sortedArray[$value["ID"]] = $value["Name"] ;
 }
 
-if($_GET['button'] == "add") {
-    
-}
+//var_dump($sortedArray);exit;
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
 
-    $name = $_POST['name'];
+    if($_GET['button'] == "delete") {
+    }
+    
+    if($_GET['button'] == "add") {
 
-    $description = $_POST['desctiption'];
+        $name = $_POST["name"];
+        $description = $_POST["description"];
 
-    $sql = "INSERT INTO `package_info`(`Gym ID`, `Name`, `descripction`) VALUES ('$name','$description')";
-    $result = mysqli_query($con, $sql);
+        $selectOption = $_POST["PackLocation"];
 
+        foreach($sortedArray as $key=>$value){
+            if($value == $selectOption){
+                $gymID = $key ;
+            }
+        }
 
+        $sqlPackage = "INSERT INTO `package_info`( `Gym ID`, `Name`, `descripction`) VALUES ('$gymID','$name','$description')";
+        $result = mysqli_query($con, $sql);
+    }
+    
 }
 
 

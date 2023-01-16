@@ -52,7 +52,7 @@ include "config/packagesLogic.php";
 
                         <?php if($_GET["button"] == "add"): ?>
 
-                            <form class="bg-dark text-light" method="post">
+                            <form class="bg-dark text-light" method="post" id="packageForm">
                                 <h3>Add new package </h3>
                                 <div class="form-group">
                                     <label for="name">Name</label>
@@ -62,6 +62,13 @@ include "config/packagesLogic.php";
                                     <label for="description">Discription</label>
                                     <input type="description" name="description" class="form-control" id="description" placeholder="Description">
                                 </div><br>
+                                <div class="form-group">
+                                <select name="PackLocation" id="packageForm" form="packageForm">
+                                <?php foreach($sortedArray as $result): ?>
+                                    <option value="<?= $result ?>"><?= $result ?></option>
+                                <?php endforeach; ?>
+                                </select>    
+                                </div> 
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                             <br>
@@ -83,6 +90,7 @@ include "config/packagesLogic.php";
                                         <tr>
                                             <th>Name</th>
                                             <th>Description</th>
+                                            <th>Location</th>
                                             <th>Number of users</th>
                                         </tr>
                                     </thead>
@@ -90,21 +98,25 @@ include "config/packagesLogic.php";
                                         <tr>
                                             <td>Basic Package</td>
                                             <td>Unlimited visits</td>
+                                            <td>Location Test</td>
                                             <td>3</td>
                                         </tr>
                                         <tr>
                                             <td>Advanced Package</td>
                                             <td>Unlimited visits and group sessions</td>
+                                            <td>Location Test</td>
                                             <td>3</td>
                                         </tr>
                                         <tr>
                                             <td>Super Session</td>
                                             <td>Unlimited visits, group and private sessions</td>
+                                            <td>Location Test</td>
                                             <td>3</td>
                                         </tr>
                                         <tr>
                                             <td>Group Sessions</td>
                                             <td>Only group sessions</td>
+                                            <td>Location Test</td>
                                             <td>3</td>
                                         </tr>
                                     </tbody>

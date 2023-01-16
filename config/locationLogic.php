@@ -8,7 +8,6 @@ $adminID = $_SESSION["adminID"];
 
 $sqlLocations = "select * from `location` where `Admin ID` = '$adminID'";
 $result = mysqli_query($con, $sqlLocations);
-$array = [];
 
 $resultArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -17,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
 
     if ($_GET['button'] == "delete") {
-
         $selectOption = $_POST['location'];
         $sqlDelete = "delete from `location` where `Name` = '$selectOption'";
         $result = mysqli_query($con, $sqlDelete);
