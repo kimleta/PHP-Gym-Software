@@ -74,9 +74,19 @@ include "config/packagesLogic.php";
                             <br>
         
                         <?php endif; ?>
+                        
 
                         <?php if($_GET["button"] == "delete"): ?>
-
+                            <form class="bg-dark text-light" id="packageForm" method="post">
+                                <h3>Delete Package</h3>                         
+                                <div class="form-group">
+                                <select name="package" id="package" form="packageForm">
+                                <?php foreach($sortedPackages as $result): ?>
+                                    <option value="<?= $result['ID'] ?>"><?= $result['Name'] ?></option>
+                                <?php endforeach; ?>
+                                </select>         </div><br>
+                                <button type="submit" class="btn btn-danger">Delete</button>      <br>  <br>            
+                        </form>
                         <?php endif; ?>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -91,34 +101,16 @@ include "config/packagesLogic.php";
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Location</th>
-                                            <th>Number of users</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach($sortedPackages as $key=>$value): ?>
                                         <tr>
-                                            <td>Basic Package</td>
-                                            <td>Unlimited visits</td>
-                                            <td>Location Test</td>
-                                            <td>3</td>
+                                            <td><?= $value["Name"] ?></td>
+                                            <td><?= $value["descripction"] ?></td>
+                                            <td><?= $value["Gym Name"] ?></td>
                                         </tr>
-                                        <tr>
-                                            <td>Advanced Package</td>
-                                            <td>Unlimited visits and group sessions</td>
-                                            <td>Location Test</td>
-                                            <td>3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Super Session</td>
-                                            <td>Unlimited visits, group and private sessions</td>
-                                            <td>Location Test</td>
-                                            <td>3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Group Sessions</td>
-                                            <td>Only group sessions</td>
-                                            <td>Location Test</td>
-                                            <td>3</td>
-                                        </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
