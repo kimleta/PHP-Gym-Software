@@ -14,7 +14,7 @@
                                     Log Off
                                 </a>
                             <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Member Section</div>
-                                <a class="nav-link" href="members.php">
+                                <a class="nav-link" href="members-create.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
                                     Add new Member
                                 </a>
@@ -24,7 +24,7 @@
                                 </a>
                                 <a class="nav-link" href="members.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                                    Search for member info
+                                    Search for member
                                 </a>
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Location Section</div>
                                 <a class="nav-link" href="location.php">
@@ -34,15 +34,11 @@
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Instructor Section</div>
                                 <a class="nav-link" href="members.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                    All scheduled sessions
-                                </a>
-                                <a class="nav-link" href="members.php">
-                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                                    Search sessions by instructor
+                                    All scheduled group sessions
                                 </a>
                                 <a class="nav-link" href="members.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-plus"></i></div>
-                                    Schedule session
+                                    Schedule group session
                                 </a>
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Package Section</div>
                                 <a class="nav-link" href="packages.php">
