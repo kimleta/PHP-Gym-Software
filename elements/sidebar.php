@@ -32,13 +32,9 @@
                                     Add new location
                                 </a>
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Instructor Section</div>
-                                <a class="nav-link" href="members.php">
+                                <a class="nav-link" href="sessions.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                    All scheduled group sessions
-                                </a>
-                                <a class="nav-link" href="members.php">
-                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-plus"></i></div>
-                                    Schedule group session
+                                    Group sessions
                                 </a>
                                 <hr><div class="sb-sidenav-menu-heading text-white" style="padding: 0rem 1rem 0.75rem">Package Section</div>
                                 <a class="nav-link" href="packages.php">
@@ -46,6 +42,7 @@
                                     Add/Edit Packages
                                 </a>
                     </div>
+                    <br><br><br>
                     <div class="sb-sidenav-footer sidebar-bottom">
                         <div class="small">Logged in as:</div>
                         <?php echo $_SESSION["username"]; ?>

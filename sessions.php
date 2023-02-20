@@ -7,12 +7,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+include "config/sessionsLogic.php";
+
+
+
 ?>
  
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,90 +51,81 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Private Sessions</h1>
+                        <h1 class="mt-4">Group Sessions</h1>
+                        <?php if($_GET["button"] == "add"): ?>
+                        <form class="bg-dark text-light" method="post" id="packageForm">
+                            <h3>Add new session </h3>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter name of session">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="text" name="date" class="form-control" id="date" placeholder="ex: Monday,Tuesday,Friday">
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <input type="text" name="time" class="form-control" id="time" placeholder="ex: 19:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="instructor">Fitness Instructor</label>
+                                <input type="text" name="instructor" class="form-control" id="description" placeholder="Joe Jones">
+                            </div><br>
+                            <div class="form-group">
+                            <select name="PackLocation" id="packageForm" form="packageForm">
+                            <?php foreach($sortedArray as $result): ?>
+                                <option value="<?= $result ?>"><?= $result ?></option>
+                            <?php endforeach; ?>
+                            </select>    
+                            </div> 
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <br>
+
+                        <?php endif; ?>
+
+
+                        <?php if($_GET["button"] == "delete"): ?>
+                        <form class="bg-dark text-light" id="packageForm" method="post">
+                            <h3>Delete Package</h3>                         
+                            <div class="form-group">
+                            <select name="package" id="package" form="packageForm">
+                            <?php foreach($sortedPackages as $result): ?>
+                                <option value="<?= $result['ID'] ?>"><?= $result['Name'] ?></option>
+                            <?php endforeach; ?>
+                            </select>         </div><br>
+                            <button type="submit" class="btn btn-danger">Delete</button>      <br>  <br>            
+                        </form>
+                        <?php endif; ?>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
+                                <a href="?button=add"><button type="button" class="btn btn-primary btn-sm">Add new session</button> </a>
+                                <a href="?button=delete"><button type="button" class="btn btn-danger btn-sm">Delete session</button> </a>
                                 
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table class="table" id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Name of session</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Location</th>
+                                            <th>Fitness instructor</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
+                                        <?php foreach($sortedPackages as $key=>$value): ?>
                                         <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
+                                            <td><?= $value["Name"] ?></td>
+                                            <td><?= $value["Date"] ?></td>
+                                            <td><?= $value["Time"] ?></td>
+                                            <td><?= $value["Location"] ?></td>
+                                            <td><?= $value["Fitness instructor"] ?></td>
                                         </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>$86,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>$162,700</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>$372,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Herrod Chandler</td>
-                                            <td>Sales Assistant</td>
-                                            <td>San Francisco</td>
-                                            <td>59</td>
-                                            <td>2012/08/06</td>
-                                            <td>$137,500</td>
+                                        <?php endforeach; ?>
                                         </tr>
                                     </tbody>
                                 </table>

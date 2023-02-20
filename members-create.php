@@ -7,7 +7,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+
+include 'config/membersCreateLogic.php';
+
 ?>
+
  
 
 
@@ -50,46 +55,48 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">All Members</h1>
+                        <h1 class="mt-4">Create member</h1>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                
+                                <i class="fa-solid fa-user-plus"></i>
                             </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Number</th>
-                                            <th>Age</th>
-                                            <th>Membership expire date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                        <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Number</th>
-                                            <th>Age</th>
-                                            <th>Membership expire date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Herrod Chandler</td>
-                                            <td>Sales Assistant</td>
-                                            <td>San Francisco</td>
-                                            <td>59</td>
-                                            <td>2012/08/06</td>
-                                            <td>$137,500</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="card-body bg-dark">
+                            <form class="text-light" method="post" id="packageForm">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Discription</label>
+                                    <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="number">Number</label>
+                                    <input type="number" name="number" class="form-control" id="number" placeholder="Number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="months">Months</label>
+                                    <input type="number" class="form-control" id="months" placeholder="How many months client pays in advence ?">
+                                </div>
+                                <div class="form-group">
+
+                                <label for="locationForm">Location</label><br>
+                                <select name="PackLocation" id="locationForm" form="locationForm">
+                                <?php foreach($sortedArray as $result): ?> 
+                                    <option id ="location" value="<?= $result ?>"><?= $result ?></option>
+                                <?php endforeach; ?>
+                                </select>    <br>
+                                <label for="packageForm">Package</label><br>
+                                <select name="PackPackage" id="packageForm" form="packageForm">
+                                <?php foreach($sortedPackages as $result): ?>
+                                    <option id ="packages" value="<?= $result ?>"><?= $result ?></option>
+                                <?php endforeach; ?>
+                                </select>    
+
+                                </div> 
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
                             </div>
                         </div>
                     </div>

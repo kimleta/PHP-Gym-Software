@@ -7,6 +7,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+
+include "config/membersLogic.php";
+
 ?>
  
 
@@ -57,36 +61,36 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                 
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table class="table" id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Name</th>
                                             <th>Address</th>
                                             <th>Number</th>
-                                            <th>Age</th>
-                                            <th>Membership expire date</th>
-                                            <th>Salary</th>
+                                            <th>Package</th>
+                                            <th>Expiration date</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                        <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Number</th>
-                                            <th>Age</th>
-                                            <th>Membership expire date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>Herrod Chandler</td>
-                                            <td>Sales Assistant</td>
-                                            <td>San Francisco</td>
-                                            <td>59</td>
-                                            <td>2012/08/06</td>
-                                            <td>$137,500</td>
+                                        <?php foreach($resultArrayPackages as $key=>$value): ?>
+                                        <?php 
+                                        $time = time(); 
+                                        $endDate = strtotime($value["End Date"]);
+                                        $time = $endDate-$time ;
+                                        $time = ceil(abs($time / 86400));
+                                        ?>
+                                        <tr>
+                                            <td><?= $value["ID"] ?></td>
+                                            <td><?= $value["Name"] ?></td>
+                                            <td><?= $value["Address"] ?></td>
+                                            <td><?= $value["Number"] ?></td>
+                                            <td><?= $value["Package Name"] ?></td>
+                                            <td><?= $value["End Date"] ?> (<?= $time ?> days left)</td>
+                                            <td><a href="member.php?info=<?= $value["ID"]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
+                                        </tr>
+                                        <?php endforeach; ?>
                                         </tr>
                                     </tbody>
                                 </table>
