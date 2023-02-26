@@ -64,19 +64,19 @@ include 'config/membersCreateLogic.php';
                             <form class="text-light" method="post" id="packageForm">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="address">Discription</label>
-                                    <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+                                    <label for="address">Address</label>
+                                    <input type="text" name="address" class="form-control" id="address" placeholder="Address" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="number">Number</label>
-                                    <input type="number" name="number" class="form-control" id="number" placeholder="Number">
+                                    <input type="number" name="number" class="form-control" id="number" placeholder="Number" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="months">Months</label>
-                                    <input type="number" class="form-control" id="months" placeholder="How many months client pays in advence ?">
+                                    <input type="number" class="form-control" id="months" placeholder="How many months client pays in advence ?" required>
                                 </div>
                                 <div class="form-group">
 

@@ -22,7 +22,7 @@
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                     Show All Members
                                 </a>
-                                <a class="nav-link" href="members.php">
+                                <a class="nav-link" href="member.php">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                                     Search for member
                                 </a>

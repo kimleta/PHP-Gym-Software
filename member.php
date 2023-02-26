@@ -8,8 +8,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
+
+include "config/searchLogic.php";
+
 ?>
  
+
+
 
 
 <!DOCTYPE html>
@@ -20,8 +25,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - AlphaTrack</title>
         <link rel="icon" href="public/img/Alogo.png" type="image/icon type">
+        <title>Dashboard - AlphaTrack</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="public/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -49,18 +54,58 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Search members</h1>
+                        <form class="bg-dark text-light form-inline" method="get">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <h4>Search by:</h4>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"><br>
+                                <input type="number" class="form-control" name="id" id="id" placeholder="ID">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Search</button>
+                        </form>
+                    <?php if($_GET): ?>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    
+                                <table class="table" id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Number</th>
+                                            <th>Package</th>
+                                            <th>Expiration date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                        <?php foreach($resultArray as $value):?>
+                            <?php 
+                                        $time = time(); 
+                                        $endDate = strtotime($value["End Date"]);
+                                        $time = $endDate-$time ;
+                                        $time = ceil(abs($time / 86400));
+                                        ?>
+                                            <tr>
+                                            <td><?= $value["ID"] ?></td>
+                                            <td><?= $value["Name"] ?></td>
+                                            <td><?= $value["Address"] ?></td>
+                                            <td><?= $value["Number"] ?></td>
+                                            <td><?= $value["Package Name"] ?></td>
+                                            <td><?= $value["End Date"] ?> (<?= $time ?> days left)</td>
+                                            <td><a href="member.php?info=<?= $value["ID"]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
+                                        </tr>
+                        <?php endforeach; ?>
+                                    </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
