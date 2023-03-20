@@ -76,16 +76,18 @@ include 'config/membersCreateLogic.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="months">Months</label>
-                                    <input type="number" class="form-control" id="months" placeholder="How many months client pays in advence ?" required>
+                                    <input type="number" name="months" class="form-control" id="months" placeholder="How many months client pays in advence ?" required>
                                 </div>
                                 <div class="form-group">
-
                                 <label for="locationForm">Location</label><br>
-                                <select name="PackLocation" id="locationForm" form="locationForm">
+                                <select name="location" id="locationForm" form="packageForm">
                                 <?php foreach($sortedArray as $result): ?> 
                                     <option id ="location" value="<?= $result ?>"><?= $result ?></option>
                                 <?php endforeach; ?>
                                 </select>    <br>
+
+                                </div> 
+                                <div class="form-group">
                                 <label for="packageForm">Package</label><br>
                                 <select name="PackPackage" id="packageForm" form="packageForm">
                                 <?php foreach($sortedPackages as $result): ?>
@@ -95,7 +97,7 @@ include 'config/membersCreateLogic.php';
 
                                 </div> 
                                 <br>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="?button=add"><button type="submit" class="btn btn-primary">Submit</button></a>
                             </form>
                             </div>
                         </div>

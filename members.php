@@ -88,7 +88,7 @@ include "config/membersLogic.php";
                                             <td><?= $value["Number"] ?></td>
                                             <td><?= $value["Package Name"] ?></td>
                                             <td><?= $value["End Date"] ?> (<?= $time ?> days left)</td>
-                                            <td><a href="member.php?info=<?= $value["ID"]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
+                                            <td><a href="member-info.php?id=<?= $value["ID"]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
                                         </tr>
                                         <?php endforeach; ?>
                                         </tr>

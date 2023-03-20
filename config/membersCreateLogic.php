@@ -49,31 +49,40 @@ foreach($resultArrayPackages as $key=> $value){
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
 
-    if($_GET['button'] == "add") {
-
         $name = $_POST["name"];
-        $description = $_POST["description"];
-        $selectOption = $_POST["PackLocation"];
+        $address = $_POST["address"];
+        $number = $_POST["number"];
+        $months = $_POST["months"];
+        $location = $_POST["location"];
+        $PackPackage = $_POST["PackPackage"];
 
-        
+        $startDate = date("Y-m-d") ;
+        $endDate = date("Y-m-d", strtotime(' + '.$months.' months'));
+
         foreach($sortedArray as $key=>$value){
-            if($value == $selectOption){
+            if($value == $location){
                 $gymID = $key ;
             }
         }
+
+        foreach($sortedPackages as $key=>$value){
+            if($value == $PackPackage){
+                $package = $key ;
+            }
+        }
+
+
         // Check if there 
         /// inserting into DB
-        $sqlPackage = "INSERT INTO `package_info`( `Gym ID`, `Name`, `descripction`) VALUES ('$gymID','$name','$description')";
-        $result = mysqli_query($con, $sqlPackage);
+        $sqlUser = "INSERT INTO `user`(`Name`, `Address`, `Number`, `GymID`, `Start Date`, `End Date`, `Package ID`) VALUES ('$name','$address','$number','$gymID','$startDate','$endDate','$package')";
+        $result = mysqli_query($con, $sqlUser);
 
-        
         if($result){
             $_POST = array();
             header('Location: /members.php');
         } 
     }
     
-}
 
 
 

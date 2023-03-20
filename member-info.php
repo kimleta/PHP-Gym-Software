@@ -9,7 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
-include "config/searchLogic.php";
+include "config/memberInformationLogic.php";
 
 ?>
  
@@ -54,58 +54,34 @@ include "config/searchLogic.php";
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Search members</h1>
-                        <form class="bg-dark text-light form-inline" method="get">
-                            <div class="form-group mx-sm-3 mb-2">
-                                <h4>Search by:</h4>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"><br>
-                                <input type="number" class="form-control" name="id" id="id" placeholder="ID">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2">Search</button>
-                        </form>
-                    <?php if($_GET): ?>
+                        <h1 class="mt-4">Member info</h1>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                
-                            </div>
-                            <div class="card-body">
-                                <table class="table" id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Number</th>
-                                            <th>Package</th>
-                                            <th>Expiration date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                        <?php foreach($resultArray as $value):?>
-                            <?php 
-                                        $time = time(); 
-                                        $endDate = strtotime($value["End Date"]);
-                                        $time = $endDate-$time ;
-                                        $time = ceil(abs($time / 86400));
-                                        ?>
-                                            <tr>
-                                            <td><?= $value["ID"] ?></td>
-                                            <td><?= $value["Name"] ?></td>
-                                            <td><?= $value["Address"] ?></td>
-                                            <td><?= $value["Number"] ?></td>
-                                            <td><?= $value["Package Name"] ?></td>
-                                            <td><?= $value["End Date"] ?> (<?= $time ?> days left)</td>
-                                            <td><a href="member-info.php?id=<?= $value["ID"]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
-                                        </tr>
-                        <?php endforeach; ?>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="card-body bg-dark text-light">
+                                <?php if($resultArrayUser): ?>
+                                    <h4><b>Name:</b> <?= $resultArrayUser[0]['Name'] ?></h4>
+                                    <h4><b>Address:</b> <?= $resultArrayUser[0]['Address'] ?></h4>
+                                    <h4><b>Number:</b> <?= $resultArrayUser[0]['Number'] ?></h4>
+                                    <h4><b>Start Date:</b> <?= $resultArrayUser[0]['Start Date'] ?></h4>
+                                    <h4><b>End Date:</b> <?= $resultArrayUser[0]['End Date'] ?></h4>
+                                    <h4><b>Package :</b> <?= $resultArrayUser[0]['Package'] ?></h4>
+                                <?php endif; ?>
+                                <form method="post">
+                                <div class="form-group">
+                                <label for="months">How many months : </label>
+                                <input type="number" name="months" class="form-control" id="months" placeholder="Months" required><br>
+                                </div>
+                               <button type="submit" class="btn btn-primary">Prolong membership</button>
+                               </form><br><br>
+                               <form method="post">
+                                <div class="form-group">
+                                <label for="months">How many months : </label>
+                                <input type="number" name="months" class="form-control" id="months" placeholder="Months" required><br>
+                                </div>
+                               <button type="submit" class="btn btn-primary">Prolong membership</button>
+                               </form><br><br>
+                               <a href="member-info.php?id=<?= $_GET['id'] ?>&delete=true"onclick="return confirm('Are you sure?')"><button type="submit" class="btn btn-danger">Delete Member</button></a>
                             </div>
                         </div>
-                        <?php endif; ?>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

@@ -1,8 +1,8 @@
 <?php
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'horv_gymsoftware');
-define('DB_PASSWORD', 'eEKGgn@P4xweE5oz');
-define('DB_NAME', 'horv_gymsoftware');
+define('DB_USERNAME', 'horvatovmiroslav');
+define('DB_PASSWORD', 'Li7AWAzg2qu8t9k');
+define('DB_NAME', 'diplomski');
 
 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if($con === false){
