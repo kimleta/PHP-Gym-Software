@@ -1,8 +1,8 @@
 <?php
+
 include('databaseConnection.php');
 
 $adminID = $_SESSION["adminID"];
-
 // Array of all locations for this user
 $sqlLocations = "SELECT id, name FROM `location` WHERE `Admin ID` = '$adminID'";
 $result = mysqli_query($con, $sqlLocations);
@@ -28,27 +28,37 @@ foreach ($resultArrayPackages as $value) {
     $sortedPackages[$value["ID"]] = $value["Name"];
 }
 
-// Process POST request to add user
+
+if($_GET["id"] AND isset($_GET["id"])){
+    $id = $_GET["id"] ;
+    $sql = "SELECT * FROM `user` where `ID` = '$id'" ;
+
+    $result = mysqli_query($con, $sql);
+    $user = mysqli_fetch_assoc($result);
+
+}else{
+    header("Location : members.php");
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST["name"];
     $address = $_POST["address"];
     $number = $_POST["number"];
-    $months = $_POST["months"];
     $location = $_POST["location"];
     $packPackage = $_POST["PackPackage"];
 
-    $startDate = date("Y-m-d");
-    $endDate = date("Y-m-d", strtotime(' + '.$months.' months'));
-
     // Find the gym ID based on the selected location
     $gymID = array_search($location, $sortedArray);
-
     // Find the package ID based on the selected package name
     $package = array_search($packPackage, $sortedPackages);
 
+
     // Insert new user into database
-    $sqlUser = "INSERT INTO `user`(`Name`, `Address`, `Number`, `GymID`, `Start Date`, `End Date`, `Package ID`)
-                VALUES ('$name','$address','$number','$gymID','$startDate','$endDate','$package')";
+    $sqlUser = "UPDATE `user` SET `Name` = '$name',`Address` = '$address',`Number`= '$number',`GymID`='$gymID',`Package ID` = $package
+                WHERE `ID` = '$id'";
+
     $result = mysqli_query($con, $sqlUser);
 
     if ($result) {

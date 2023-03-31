@@ -9,14 +9,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
-include "config/memberInformationLogic.php";
+include 'config/membersExpiredLogic.php';
 
 ?>
  
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,8 +21,8 @@ include "config/memberInformationLogic.php";
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="icon" href="public/img/Alogo.png" type="image/icon type">
         <title>Dashboard - AlphaTrack</title>
+        <link rel="icon" href="public/img/Alogo.png" type="image/icon type">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="public/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -54,28 +50,54 @@ include "config/memberInformationLogic.php";
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Member info</h1>
+                    <h1 class="mt-4">Dashboard</h1>
+                    <form class="bg-dark text-light form-inline" method="post">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <h4>Activate member by:</h4>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"><br>
+                                <input type="number" class="form-control" name="id" id="id" placeholder="ID">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Activate</button>
+                        </form><br>
+                        <a href="membersExpired.php"><button type="submit" class="btn btn-danger mb-2">See expired/expiring members</button></a>
                         <div class="card mb-4">
-                            <div class="card-body bg-dark text-light">
-                                <?php if($user): ?>
-                                    <h4><b>Name:</b> <?= $user['Name'] ?></h4>
-                                    <h4><b>Address:</b> <?= $user['Address'] ?></h4>
-                                    <h4><b>Number:</b> <?= $user['Number'] ?></h4>
-                                    <h4><b>Location:</b> <?= $user['GymID'] ?></h4>
-                                    <h4><b>Start Date:</b> <?= $user['Start Date'] ?></h4>
-                                    <h4><b>End Date:</b> <?= $user['End Date'] ?></h4>
-                                    <h4><b>Package :</b> <?= $user['Package'] ?></h4>
-                                <?php endif; ?>
-                                <form method="post">
-                                <div class="form-group">
-                                <label for="months">How many months : </label>
-                                <input type="number" name="months" class="form-control" id="months" placeholder="Months" required><br>
-                                </div>
-                               <button type="submit" class="btn btn-primary">Prolong membership</button>
-                               </form><br><br>
-                               <a href="member-info.php?id=<?= $_GET['id'] ?>&action=delete"onclick="return confirm('Are you sure?')"><button type="submit" class="btn btn-danger">Delete Member</button></a>
-                               <a href="members-change.php?id=<?= $_GET['id'] ?>"><button type="submit" class="btn btn-warning">Change Member Info</button></a>
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Active memebers
+                            </div>
+                            <div class="card-body">
+                                <table class="table" id="datatablesSimple">
+                                <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Number</th>
+                                            <th>Package</th>
+                                            <th>Expiration date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($arrayOfMemberCookies as $key => $result): ?>
+                                            <?php $uniqueId = $result ; ?>
+                                            <?php if($_COOKIE[$result]){ 
+                                                $result = explode("|",$_COOKIE[$result]); ?>
+                                        <tr>
+                                            <td><?= $result[0]; ?></td>
+                                            <td><?= $result[1]; ?></td>
+                                            <td><?= $result[2]; ?></td>
+                                            <td><?= $result[3]; ?></td>
+                                            <td><?= $result[4]; ?></td>
+                                            <td><?= $result[5]; ?></td>
+                                            <td><a href="member-info.php?id=<?= $result[0]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
+                                           
+                                            <td><a href="dashboard.php?remove=<?= $uniqueId ?>"><button type="button" class="btn btn-danger btn-sm">End session</button> </a</td>
 
+                                        <?php } ?>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

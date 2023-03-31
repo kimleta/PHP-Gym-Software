@@ -1,7 +1,5 @@
 <?php 
 
-error_reporting(0);
-
     include('databaseConnection.php');  
     $username = $_POST['username'];  
     $password = $_POST['password'];  

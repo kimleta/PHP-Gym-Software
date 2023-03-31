@@ -1,5 +1,4 @@
 <?php
-error_reporting(0);
 // If form is submited do registration
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

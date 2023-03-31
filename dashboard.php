@@ -8,10 +8,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
+
+include 'config/dashboardLogic.php';
+
 ?>
  
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -49,15 +50,53 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                    <h1 class="mt-4">Dashboard</h1>
+                    <form class="bg-dark text-light form-inline" method="post">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <h4>Activate member by:</h4>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"><br>
+                                <input type="number" class="form-control" name="id" id="id" placeholder="ID">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Activate</button>
+                        </form><br>
+                        <a href="membersExpired.php"><button type="submit" class="btn btn-danger mb-2">See expired/expiring members</button></a>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Active memebers
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    
+                                <table class="table" id="datatablesSimple">
+                                <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Number</th>
+                                            <th>Package</th>
+                                            <th>Expiration date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($arrayOfMemberCookies as $key => $result): ?>
+                                            <?php $uniqueId = $result ; ?>
+                                            <?php if($_COOKIE[$result]){ 
+                                                $result = explode("|",$_COOKIE[$result]); ?>
+                                        <tr>
+                                            <td><?= $result[0]; ?></td>
+                                            <td><?= $result[1]; ?></td>
+                                            <td><?= $result[2]; ?></td>
+                                            <td><?= $result[3]; ?></td>
+                                            <td><?= $result[4]; ?></td>
+                                            <td><?= $result[5]; ?></td>
+                                            <td><a href="member-info.php?id=<?= $result[0]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
+                                           
+                                            <td><a href="dashboard.php?remove=<?= $uniqueId ?>"><button type="button" class="btn btn-danger btn-sm">End session</button> </a</td>
+
+                                        <?php } ?>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

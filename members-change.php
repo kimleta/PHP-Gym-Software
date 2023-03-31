@@ -9,9 +9,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
-include "config/memberInformationLogic.php";
+include 'config/membersChangeLogic.php';
 
 ?>
+
  
 
 
@@ -54,28 +55,46 @@ include "config/memberInformationLogic.php";
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Member info</h1>
+                        <h1 class="mt-4">Change member info</h1>
                         <div class="card mb-4">
-                            <div class="card-body bg-dark text-light">
-                                <?php if($user): ?>
-                                    <h4><b>Name:</b> <?= $user['Name'] ?></h4>
-                                    <h4><b>Address:</b> <?= $user['Address'] ?></h4>
-                                    <h4><b>Number:</b> <?= $user['Number'] ?></h4>
-                                    <h4><b>Location:</b> <?= $user['GymID'] ?></h4>
-                                    <h4><b>Start Date:</b> <?= $user['Start Date'] ?></h4>
-                                    <h4><b>End Date:</b> <?= $user['End Date'] ?></h4>
-                                    <h4><b>Package :</b> <?= $user['Package'] ?></h4>
-                                <?php endif; ?>
-                                <form method="post">
+                            <div class="card-header">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+                            <div class="card-body bg-dark">
+                            <form class="text-light" method="post" id="packageForm">
                                 <div class="form-group">
-                                <label for="months">How many months : </label>
-                                <input type="number" name="months" class="form-control" id="months" placeholder="Months" required><br>
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="<?= $user["Name"]; ?>" required>
                                 </div>
-                               <button type="submit" class="btn btn-primary">Prolong membership</button>
-                               </form><br><br>
-                               <a href="member-info.php?id=<?= $_GET['id'] ?>&action=delete"onclick="return confirm('Are you sure?')"><button type="submit" class="btn btn-danger">Delete Member</button></a>
-                               <a href="members-change.php?id=<?= $_GET['id'] ?>"><button type="submit" class="btn btn-warning">Change Member Info</button></a>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" name="address" class="form-control" id="address" placeholder="Address" value="<?= $user["Address"]; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="number">Number</label>
+                                    <input type="tel" name="number" class="form-control" id="number" placeholder="Number" value="<?= $user["Number"]; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                <label for="locationForm">Location</label><br>
+                                <select name="location" id="locationForm" form="packageForm">
+                                <?php foreach($sortedArray as $key => $result): ?> 
+                                    <option id ="location" value="<?= $result ?>" <?php if($user['GymID'] == $key): echo "selected"; endif; ?>><?= $result ?></option>
+                                <?php endforeach; ?>
+                                </select>    <br>
 
+                                </div> 
+                                <div class="form-group">
+                                <label for="packageForm">Package</label><br>
+                                <select name="PackPackage" id="packageForm" form="packageForm">
+                                <?php foreach($sortedPackages as $key => $result): ?>
+                                    <option id ="packages" value="<?= $result ?>"  <?php if($user['Package ID'] == $key): echo "selected"; endif; ?>><?= $result ?></option>
+                                <?php endforeach; ?>
+                                </select>    
+
+                                </div> 
+                                <br>
+                                <a href="?button=add"><button type="submit" class="btn btn-primary">Submit</button></a>
+                            </form>
                             </div>
                         </div>
                     </div>
