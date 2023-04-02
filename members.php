@@ -79,7 +79,9 @@ include "config/membersLogic.php";
                                         $time = time(); 
                                         $endDate = strtotime($value["End Date"]);
                                         $time = $endDate-$time ;
-                                        $time = ceil(abs($time / 86400));
+                                        $time = ceil($time / 86400);
+                                        if($time < 0){$negative = 'true';}
+                                        $time = abs($time); 
                                         ?>
                                         <tr>
                                             <td><?= $value["ID"] ?></td>
@@ -87,7 +89,7 @@ include "config/membersLogic.php";
                                             <td><?= $value["Address"] ?></td>
                                             <td><?= $value["Number"] ?></td>
                                             <td><?= $value["Package Name"] ?></td>
-                                            <td><?= $value["End Date"] ?> (<?= $time ?> days left)</td>
+                                            <td><?= $value["End Date"] ?> (<?= $time ?> days <?php if($negative):?> ago <?php else: ?> left <?php endif; ?>)</td>
                                             <td><a href="member-info.php?id=<?= $value["ID"]?>"><button type="button" class="btn btn-primary btn-sm">Info</button> </a</td>
                                         </tr>
                                         <?php endforeach; ?>

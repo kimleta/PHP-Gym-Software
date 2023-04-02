@@ -4,6 +4,17 @@ include('databaseConnection.php');
 
 // Location logic
 
+//Array of all locations for this user
+$sqlLocation = 'SELECT `ID`, `Name` FROM `location`' ; 
+$result = mysqli_query($con, $sqlLocation);
+$resultArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
+ 
+/// Sort them by id(key) and name(value)
+$sortedArray = [] ;
+foreach($resultArray as $value) {
+    $sortedArray[$value["ID"]] = $value["Name"] ;
+}
+
 
 if (!isset($_GET['id'])) {
     header("Location: /dashboard.php");
@@ -22,6 +33,9 @@ if (!$resultUser) {
 }
 
 $user = mysqli_fetch_assoc($resultUser);
+
+// Get name of package
+$user['Gym Name'] = $sortedArray[$user['GymID']];
 
 // Retrieve package name
 $sqlPackage = "SELECT `Name` FROM `package_info` WHERE `ID` = '{$user['Package ID']}'";

@@ -12,8 +12,6 @@ $result = mysqli_query($con, $sqlLocations);
 $resultArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
  
 /// Sort them by id(key) and name(value)
-
-
 $sortedArray = [] ;
 foreach($resultArray as $value) {
     $sortedArray[$value["id"]] = $value["name"] ;

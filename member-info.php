@@ -61,7 +61,7 @@ include "config/memberInformationLogic.php";
                                     <h4><b>Name:</b> <?= $user['Name'] ?></h4>
                                     <h4><b>Address:</b> <?= $user['Address'] ?></h4>
                                     <h4><b>Number:</b> <?= $user['Number'] ?></h4>
-                                    <h4><b>Location:</b> <?= $user['GymID'] ?></h4>
+                                    <h4><b>Location:</b> <?= $user['Gym Name'] ?></h4>
                                     <h4><b>Start Date:</b> <?= $user['Start Date'] ?></h4>
                                     <h4><b>End Date:</b> <?= $user['End Date'] ?></h4>
                                     <h4><b>Package :</b> <?= $user['Package'] ?></h4>
