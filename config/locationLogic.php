@@ -11,6 +11,18 @@ $result = mysqli_query($con, $sqlLocations);
 
 $resultArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+
+if($_GET["id"]){
+
+    $id = $_GET["id"];
+    $sqlLocationsByID = "select * from `location` where `ID` = $id ";
+    $resultByID = mysqli_query($con, $sqlLocationsByID);
+    $resultArrayByID = mysqli_fetch_all($resultByID, MYSQLI_ASSOC);
+
+}
+
+
+
 // For adding and deleting locations
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
@@ -56,5 +68,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
         }
+    }
+
+    if($_GET["id"]){
+
+        $id = $_GET["id"];
+
+        $sql = "UPDATE `location` SET `Name`='$name' WHERE `ID` = $id" ;
+
+        $result = mysqli_query($con, $sql);
+
+
+        if($result){
+            $_POST = array();
+            header('Location: /location.php');
+        }
+
+    
     }
 }

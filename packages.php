@@ -50,6 +50,31 @@ include "config/packagesLogic.php";
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">List of Packages </h1>
 
+                        <?php if($_GET["id"]): ?>
+
+                                <form class="bg-dark text-light" method="post" id="packageForm">
+                                    <h3>Update package </h3>
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name of package" value ="<?= $resultArrayPackagesByID[0]['Name']?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Discription</label>
+                                        <input type="description" name="description" class="form-control" id="description" placeholder="Description" value ="<?= $resultArrayPackagesByID[0]['descripction']?>">
+                                    </div><br>
+                                    <div class="form-group">
+                                    <select name="PackLocation" id="packageForm" form="packageForm">
+                                    <?php foreach($sortedArray as $key=>$value): ?>
+                                        <option value="<?= $value ?>" <?php if($key == $resultArrayPackagesByID[0]['Gym ID']): echo "selected"; endif; ?>><?= $value ?></option>
+                                    <?php endforeach; ?>
+                                    </select>    
+                                    </div> 
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                                <br>
+
+                                <?php endif; ?>
+
                         <?php if($_GET["button"] == "add"): ?>
 
                             <form class="bg-dark text-light" method="post" id="packageForm">
@@ -109,6 +134,7 @@ include "config/packagesLogic.php";
                                             <td><?= $value["Name"] ?></td>
                                             <td><?= $value["descripction"] ?></td>
                                             <td><?= $value["Gym Name"] ?></td>
+                                            <td><a href="packages.php?id=<?= $value["ID"]?>"><button type="button" class="btn btn-warning btn-sm">Update</button> </a</td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>

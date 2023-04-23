@@ -48,6 +48,21 @@ foreach($resultArrayPackages as $key=> $value){
 
 
 
+if($_GET['id']){
+    $id = $_GET['id'];
+    if(!$id){
+        echo "<script>alert('Invalid ID!')</script>" ;
+    }else{
+    $sqlSessions = "Select * from `group_sessions` where `ID` = '$id'";
+    $resultSession = mysqli_query($con, $sqlSessions);
+    $resultSessionArray = mysqli_fetch_all($resultSession, MYSQLI_ASSOC);
+    //var_dump($resultSessionArray);exit;
+
+}
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
 
     if($_GET['button'] == "delete") {
@@ -80,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-        // Check if there 
         /// inserting into DB
         $sqlPackage = "INSERT INTO `group_sessions`(`Date`, `Name`, `Time`, `GymID`, `Location`, `Fitness instructor`) VALUES ('$date','$name','$time','$gymID','$selectOption','$instructor')";
         //var_dump($sqlPackage);exit;
@@ -91,6 +105,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST = array();
             header('Location: /sessions.php');
         } 
+    }
+
+    if($_GET['id']){
+
+        $idSession = $resultSessionArray[0]["ID"];
+
+        $name = $_POST["name"];
+        $date = $_POST["date"];
+        $time = $_POST["time"];
+        $instructor = $_POST["instructor"];
+
+        $selectOption = $_POST["PackLocation"];
+
+         /// inserting into DB
+         $sqlPackage = "UPDATE `group_sessions` SET `Date`='$date',`Name`='$name',`Time`='$time',`Location`='$selectOption',`Fitness instructor`='$instructor' WHERE `ID` = $id";
+         $result = mysqli_query($con, $sqlPackage);
+ 
+         
+         if($result){
+             $_POST = array();
+             header('Location: /sessions.php');
+         } 
     }
     
 }

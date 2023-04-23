@@ -40,8 +40,18 @@ foreach($resultArrayPackages as $key=> $value){
     $sortedPackages[] = $value ;
 }
 
-
 ////
+
+
+if($_GET["id"]){
+
+    $id = $_GET["id"];
+
+    $sqlPackagesByID = "select * from `package_info` where `ID`= '$id'";
+    $resultPackagesByID = mysqli_query($con, $sqlPackagesByID);
+    $resultArrayPackagesByID = mysqli_fetch_all($resultPackagesByID, MYSQLI_ASSOC);
+
+}
 
 
 
@@ -73,9 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-
-
-
         // Check if there 
         /// inserting into DB
         $sqlPackage = "INSERT INTO `package_info`( `Gym ID`, `Name`, `descripction`) VALUES ('$gymID','$name','$description')";
@@ -87,6 +94,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: /packages.php');
         } 
     }
+    if($_GET["id"]){
+
+        $idPackage = $resultArrayPackagesByID[0]["ID"];
+        $name = $_POST["name"];
+        $description = $_POST["description"];
+
+        $selectOption = $_POST["PackLocation"];
+    
+        foreach($sortedArray as $key=>$value){
+            if($value == $selectOption){
+                $gymIdForUpdate = $key ;
+            }
+        }
+
+
+        $sqlPackagesUpdate = "UPDATE `package_info` SET `Gym ID`='$gymIdForUpdate',`Name`='$name',`descripction`='$description' WHERE `ID` = '$idPackage'";
+        $resultPackagesUpdate = mysqli_query($con, $sqlPackagesUpdate);
+    
+        if($resultPackagesUpdate){
+            $_POST = array();
+            header('Location: /packages.php');
+        } 
+
+    }
+    
     
 }
 

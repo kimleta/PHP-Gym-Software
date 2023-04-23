@@ -84,10 +84,43 @@ include "config/sessionsLogic.php";
 
                         <?php endif; ?>
 
+                        
+                        <?php if($_GET["id"]): ?>
+                            <form class="bg-dark text-light" method="post" id="packageForm">
+                            <h3>Update session </h3>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter name of session" value="<?= $resultSessionArray[0]['Name'] ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="text" name="date" class="form-control" id="date" placeholder="ex: Monday,Tuesday,Friday" value="<?= $resultSessionArray[0]['Date'] ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <input type="text" name="time" class="form-control" id="time" placeholder="ex: 19:00" value="<?= $resultSessionArray[0]['Time'] ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="instructor">Fitness Instructor</label>
+                                <input type="text" name="instructor" class="form-control" id="description" placeholder="Joe Jones" value="<?= $resultSessionArray[0]['Fitness instructor'] ?>">
+                            </div><br>
+                            <div class="form-group">
+                            <select name="PackLocation" id="packageForm" form="packageForm">
+                            <?php foreach($sortedArray as $result): ?>
+                                <option value="<?= $result ?>" <?php if($resultSessionArray[0]['Location'] == $result) : echo "selected" ; endif; ?>><?= $result ?></option>
+                            <?php endforeach; ?>
+                            </select>    
+                            </div> 
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <br>
+
+                        <?php endif; ?>
+
 
                         <?php if($_GET["button"] == "delete"): ?>
                         <form class="bg-dark text-light" id="packageForm" method="post">
-                            <h3>Delete Package</h3>                         
+                            <h3>Delete Session</h3>                         
                             <div class="form-group">
                             <select name="package" id="package" form="packageForm">
                             <?php foreach($sortedPackages as $result): ?>
@@ -124,6 +157,7 @@ include "config/sessionsLogic.php";
                                             <td><?= $value["Time"] ?></td>
                                             <td><?= $value["Location"] ?></td>
                                             <td><?= $value["Fitness instructor"] ?></td>
+                                            <td><a href="sessions.php?id=<?= $value["ID"]?>"><button type="button" class="btn btn-warning btn-sm">Update</button> </a</td>
                                         </tr>
                                         <?php endforeach; ?>
                                         </tr>
