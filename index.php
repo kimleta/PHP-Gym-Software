@@ -23,7 +23,7 @@
                         <p><b>AlphaTrack</b> Membership managment software is for all types of ventures 
                             who need membership tracking</p>
                         <br>
-                        <a href="login.php">Sign In/Sign Up</a><br><br>
+                        <a href="login.php">Sign In</a><br><br>
                     </div>
                 </div>    
             </div>
@@ -71,7 +71,7 @@
                                 </svg>
                             </h2>
                             <div class="w-more">
-                              <span class="w-ctegory">Free up to 100 clients</span>
+                              <span class="w-ctegory">Free trial 1 month</span>
                             </div>
                           </div>
                         </div>
@@ -89,7 +89,7 @@
                                 </svg>
                             </h2>
                             <div class="w-more">
-                              <span class="w-ctegory">Accessible through phone</span>
+                              <span class="w-ctegory">Accessible through multiple browsers</span>
                             </div>
                           </div>
                         </div>
@@ -107,7 +107,7 @@
                                 </svg>
                             </h2>
                             <div class="w-more">
-                              <span class="w-ctegory">Clients can check expiration date</span>
+                              <span class="w-ctegory">Client information</span>
                             </div>
                           </div>
                         </div>
@@ -145,7 +145,7 @@
                                   </svg>
                             </h2>
                             <div class="w-more">
-                              <span class="w-ctegory">Schedule private sessions with clients</span>
+                              <span class="w-ctegory">Schedule group sessions with clients</span>
                             </div>
                           </div>
                         </div>
@@ -156,42 +156,13 @@
         <section id="prices">
           <div class="container-fluid" >
             <div class="container p-5">
-            <h3 class="text-center">Our offers :</h3><br>
+            <h3 class="text-center">Our offer :</h3><br>
               <div class="row">
-                <div class="col-lg-6 col-md-12 mb-6">
+                <div class="col-lg-12 col-md-12 mb-12">
                   <div class="card h-100 shadow-lg">
                     <div class="card-body">
                       <div class="text-center p-3">
-                        <h5 class="card-title">Free Plan</h5>
-                        <small>For small bussines</small>
-                        <br><br>
-                        <span class="h2">$0</span>/month
-                        <br><br>
-                      </div>
-                      <p class="card-text" style="text-align:center;">up to 100 clients</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg>Best suitable for single location bussiness</li>
-                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Download list of clients any time</li>
-                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg>Get 20% off when upgrading to PRO</li>
-                    </ul>
-                    <div class="card-body text-center">
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="col-lg-6 col-md-12 mb-6">
-                  <div class="card h-100 shadow-lg">
-                    <div class="card-body">
-                      <div class="text-center p-3">
-                        <h5 class="card-title">Pro Plan</h5>
-                        <small>Large Companies</small>
+                        <h5 class="card-title">Gym+ Plan</h5>
                         <br><br>
                         <span class="h2">$30</span>/month 
                       </div><br>
@@ -200,13 +171,16 @@
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Best suitable for large bussiness with multipe locations</li>
+                      </svg> Add new members</li>
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Download list of clients any time</li>
+                      </svg> Add new locations</li>
                       <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                      </svg> Additional features in comparison with the Free Plan</li>
+                      </svg> Add new packages</li>
+                      <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                      </svg> And more !</li>
                     </ul>
                     <div class="card-body text-center">
                     </div>

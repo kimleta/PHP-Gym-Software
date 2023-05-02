@@ -46,10 +46,8 @@
                     <div class="sb-sidenav-footer sidebar-bottom">
                         <div class="small">Logged in as:</div>
                         <?php echo $_SESSION["username"]; ?>
-                        <div class="small">Active Plan :</div>
-                        <?php echo $_SESSION['plan']; if($_SESSION['plan'] === 'Free'): ?>
-                            <a href="./">Upgrade</a>
-                        <?php endif ; ?>
+                        <div class="small">License expiration :</div>
+                        May, 28. 2026.
                     </div>
                 </nav>
             </div>

@@ -42,8 +42,6 @@ include "config/loginLogic.php";
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <a href="reset-password.php"><input class="btn btn-primary" value="Forgot Password ?"></a><br><br>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p> 
             <p><a href="index.php">Go back to homepage</a>.</p>
         </form>
     </div>

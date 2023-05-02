@@ -4,7 +4,6 @@ include('databaseConnection.php');
 
 /// Packages logic, change if and location to name
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($_POST["id"]) {
         $id = $_POST["id"];
@@ -24,10 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = mysqli_fetch_assoc($result);
 
 
+    if(strtotime($user['End Date']) <= 0){
 
+        $expired = true;
 
-    if($user){
+    }
 
+    if($user AND !$expired){
         /// Check if user is active if yes dont do nothing :) 
         $user = implode("|",$user);
         $s = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 7)), 0, 7);
@@ -35,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setcookie($cookieName, $user ,time()+7200);
         header("Location: dashboard.php");
     }else{
-        echo "<script>alert('There is no user with name or ID like that !')</script>";
+        echo "<script>alert('There is no user with name or ID like that or his membership expired!')</script>";
     }
 
 

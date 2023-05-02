@@ -47,7 +47,7 @@ foreach($resultArrayPackages as $key=> $value){
 ////
 
 
-
+// There is no session by this ID
 if($_GET['id']){
     $id = $_GET['id'];
     if(!$id){
@@ -56,7 +56,6 @@ if($_GET['id']){
     $sqlSessions = "Select * from `group_sessions` where `ID` = '$id'";
     $resultSession = mysqli_query($con, $sqlSessions);
     $resultSessionArray = mysqli_fetch_all($resultSession, MYSQLI_ASSOC);
-    //var_dump($resultSessionArray);exit;
 
 }
 }
@@ -64,7 +63,7 @@ if($_GET['id']){
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
-
+// Delete session based on select menu
     if($_GET['button'] == "delete") {
         $selectOption = $_POST['package'];
 
@@ -77,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } 
 
     }
-    
+    // Add new session
     if($_GET['button'] == "add") {
 
         $name = $_POST["name"];
@@ -106,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: /sessions.php');
         } 
     }
-
+    // Update session by id and post data
     if($_GET['id']){
 
         $idSession = $resultSessionArray[0]["ID"];
@@ -130,7 +129,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
 }
-
-
-
 ?>

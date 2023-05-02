@@ -76,12 +76,14 @@ include "config/membersLogic.php";
                                         <tr>
                                         <?php foreach($resultArrayPackages as $key=>$value): ?>
                                         <?php 
+                                        $negative= false;
                                         $time = time(); 
                                         $endDate = strtotime($value["End Date"]);
                                         $time = $endDate-$time ;
                                         $time = ceil($time / 86400);
-                                        if($time < 0){$negative = 'true';}
+                                        if($time < 0){$negative = true;}
                                         $time = abs($time); 
+                                        if($negative){$time = 0 - $time;}
                                         ?>
                                         <tr>
                                             <td><?= $value["ID"] ?></td>

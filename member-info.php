@@ -72,6 +72,8 @@ include "config/memberInformationLogic.php";
                                 <input type="number" name="months" class="form-control" id="months" placeholder="Months" required><br>
                                 </div>
                                <button type="submit" class="btn btn-primary">Prolong membership</button>
+                               <button class="btn btn-danger">Short membership</button>
+
                                </form><br><br>
                                <a href="member-info.php?id=<?= $_GET['id'] ?>&action=delete"onclick="return confirm('Are you sure?')"><button type="submit" class="btn btn-danger">Delete Member</button></a>
                                <a href="members-change.php?id=<?= $_GET['id'] ?>"><button type="submit" class="btn btn-warning">Change Member Info</button></a>
